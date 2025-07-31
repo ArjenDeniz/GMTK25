@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 55350ce45b75985439615332a0b780a2, type: 3}
+  m_Name: SecondShard
+  m_EditorClassIdentifier: 
+  cardName: Basic Card
+  cardType: 0
+  baseDamage: 8
+  multiplier: 1
+  effectType: 1
+  effectValue: 2
+  effectDescription: 
+  cardArt: {fileID: 0}
+  cardColor: {r: 1, g: 1, b: 1, a: 1}
+  debugNotes: placeholder card for testing
