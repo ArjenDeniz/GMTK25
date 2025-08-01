@@ -90,6 +90,8 @@ public class CardVisual : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
     }
 
     #region Drag and Drop
+    private Vector3 dragOffset;
+
     public void OnBeginDrag(PointerEventData eventData)
     {
         if (!isDraggable) return;
@@ -98,7 +100,17 @@ public class CardVisual : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
         originalPosition = transform.position;
         originalScale = transform.localScale;
 
-        // Scale up and bring to front
+        // Calculate the offset from the mouse to the object's position
+        if (RectTransformUtility.ScreenPointToWorldPointInRectangle(
+            parentCanvas.transform as RectTransform,
+            eventData.position,
+            parentCanvas.worldCamera,
+            out Vector3 worldMousePos))
+        {
+            dragOffset = transform.position - worldMousePos;
+        }
+
+        // Scale and bring to front
         transform.localScale = originalScale * dragScale;
         transform.SetAsLastSibling();
 
@@ -109,18 +121,16 @@ public class CardVisual : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
     {
         if (!isDraggable) return;
 
-        // Follow mouse/touch
-        Vector2 screenPosition = eventData.position;
-        Vector3 worldPosition;
-        RectTransformUtility.ScreenPointToWorldPointInRectangle(
+        if (RectTransformUtility.ScreenPointToWorldPointInRectangle(
             parentCanvas.transform as RectTransform,
-            screenPosition,
+            eventData.position,
             parentCanvas.worldCamera,
-            out worldPosition
-        );
-
-        transform.position = worldPosition;
+            out Vector3 worldMousePos))
+        {
+            transform.position = worldMousePos + dragOffset;
+        }
     }
+
 
     public void OnEndDrag(PointerEventData eventData)
     {
