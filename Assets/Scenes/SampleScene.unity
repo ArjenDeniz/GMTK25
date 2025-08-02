@@ -127,6 +127,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1257603063177447358, guid: b67f4cd712e68e64e99eb68a11394dc8, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2066172700907708002, guid: b67f4cd712e68e64e99eb68a11394dc8, type: 3}
       propertyPath: m_LocalPosition.x
       value: 660
@@ -577,6 +581,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1257603063177447358, guid: b67f4cd712e68e64e99eb68a11394dc8, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2066172700907708002, guid: b67f4cd712e68e64e99eb68a11394dc8, type: 3}
       propertyPath: m_LocalPosition.x
       value: 790
@@ -777,6 +785,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1257603063177447358, guid: b67f4cd712e68e64e99eb68a11394dc8, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2066172700907708002, guid: b67f4cd712e68e64e99eb68a11394dc8, type: 3}
       propertyPath: m_LocalPosition.x
       value: 920
@@ -1404,6 +1416,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1257603063177447358, guid: b67f4cd712e68e64e99eb68a11394dc8, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2066172700907708002, guid: b67f4cd712e68e64e99eb68a11394dc8, type: 3}
       propertyPath: m_LocalPosition.x
       value: 530
@@ -1736,6 +1752,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1257603063177447358, guid: b67f4cd712e68e64e99eb68a11394dc8, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2066172700907708002, guid: b67f4cd712e68e64e99eb68a11394dc8, type: 3}
       propertyPath: m_LocalPosition.x
       value: 400
