@@ -1,5 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
+using System.Collections.Generic;
+
 
 [System.Serializable]
 public enum CardType
@@ -80,5 +82,35 @@ public class Card : ScriptableObject
                 break;
         }
     }
+
+    public void ApplyEffect(ref bool isClockwise, List<Card> clockSlots, int currentIndex)
+{
+    switch (effectType)
+    {
+        case EffectType.MultiplyDamage:
+            multiplier *= effectValue;
+            Debug.Log($"[Effect] Multiplied '{cardName}' damage by x{effectValue}");
+            break;
+
+        case EffectType.ReverseOrder:
+            isClockwise = !isClockwise;
+            Debug.Log($"[Effect] Rotation reversed!");
+            break;
+
+        case EffectType.IncreaseClockwise:
+        case EffectType.IncreaseCounterClockwise:
+            int targetIndex = effectType == EffectType.IncreaseClockwise
+                ? (currentIndex + 1) % clockSlots.Count
+                : (currentIndex - 1 + clockSlots.Count) % clockSlots.Count;
+
+            if (clockSlots[targetIndex] != null)
+            {
+                clockSlots[targetIndex].multiplier += effectValue;
+                Debug.Log($"[Effect] Boosted '{clockSlots[targetIndex].cardName}' multiplier by +{effectValue}");
+            }
+            break;
+    }
+}
+
 }
 
